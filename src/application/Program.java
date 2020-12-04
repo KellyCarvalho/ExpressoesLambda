@@ -30,14 +30,9 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		Comparator<Produto>comp = new Comparator<Produto>() {
-
-			@Override
-			public int compare(Produto p1, Produto p2) {
-				return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
-			}
-			
-			
+		
+		Comparator<Produto>comp = (p1,p2) -> {
+			return p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase());
 		};
 		list.sort(comp);
 		for(Produto p:list) {
