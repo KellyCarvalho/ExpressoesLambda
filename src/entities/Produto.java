@@ -30,11 +30,10 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-public static boolean staticProdutoPredicate(Produto p) {
-	return p.getPrice()>=100.00;
-}
-public  boolean naostaticProdutoPredicate() {
-	return price>=100.00;
+public static void staticAtualizarPreco(Produto p) {
+	
+	p.setPrice(p.getPrice()-(p.getPrice()*0.1));
+	
 }
 @Override
 public String toString() {

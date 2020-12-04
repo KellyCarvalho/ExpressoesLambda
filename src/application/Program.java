@@ -35,7 +35,7 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		list.forEach(new DescontoPreco());//aplicando desconto
+		list.forEach(Produto::staticAtualizarPreco);//referenciando método
 		list.forEach(System.out::println);//referenciando método
 		
 		
