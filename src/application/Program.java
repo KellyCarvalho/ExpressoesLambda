@@ -8,7 +8,7 @@ import java.util.Scanner;
 import java.util.function.Predicate;
 
 import entities.Produto;
-import util.ProdutoPredicate;
+import util.DescontoPreco;
 
 public class Program {
 
@@ -28,20 +28,16 @@ public class Program {
 			
 			System.out.println("Informe o nome do "+count+"º produto");
 			String name =sc.next();
-			System.out.println("Informe o preco do"+count+" produto");
+			System.out.println("Informe o preco do "+count+"º produto");
 			double price =sc.nextDouble();
 			count++;
 		 
 			list.add(new Produto(name,price));
 			
 		}
+		list.forEach(new DescontoPreco());//aplicando desconto
+		list.forEach(System.out::println);//referenciando método
 		
-		list.removeIf(p->p.getPrice()<=100.00);//usando a expressão direto no método
-		
-		list.sort((p1,p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
-		for(Produto p:list) {
-			System.out.println(p);
-		}
 		
 		sc.close();
 
