@@ -23,11 +23,14 @@ public class Program {
 		
 		List<Produto> list = new ArrayList<>();
 		
+		int count=1;
 		for(int i=0;i<n;i++) {
-			System.out.println("Informe o nome do"+i+" produto");
+			
+			System.out.println("Informe o nome do "+count+"º produto");
 			String name =sc.next();
-			System.out.println("Informe o preco do"+i+" produto");
+			System.out.println("Informe o preco do"+count+" produto");
 			double price =sc.nextDouble();
+			count++;
 		 
 			list.add(new Produto(name,price));
 			
