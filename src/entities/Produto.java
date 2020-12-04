@@ -33,7 +33,9 @@ public void setPrice(double price) {
 public static boolean staticProdutoPredicate(Produto p) {
 	return p.getPrice()>=100.00;
 }
-
+public  boolean naostaticProdutoPredicate() {
+	return price>=100.00;
+}
 @Override
 public String toString() {
 	return "Produto [name=" + name + ", price=" + price + "]";
