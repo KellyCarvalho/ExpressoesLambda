@@ -30,7 +30,9 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-
+public static boolean staticProdutoPredicate(Produto p) {
+	return p.getPrice()>=100.00;
+}
 
 @Override
 public String toString() {

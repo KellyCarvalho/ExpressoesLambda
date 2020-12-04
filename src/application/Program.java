@@ -31,7 +31,7 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		list.removeIf(new ProdutoPredicate());
+		list.removeIf(Produto::staticProdutoPredicate);//referência para método
 		
 		list.sort((p1,p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 		for(Produto p:list) {
