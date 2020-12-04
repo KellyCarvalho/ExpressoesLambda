@@ -7,6 +7,7 @@ import java.util.Locale;
 import java.util.Scanner;
 
 import entities.Produto;
+import util.ProdutoPredicate;
 
 public class Program {
 
@@ -30,7 +31,7 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		
+		list.removeIf(new ProdutoPredicate());
 		
 		list.sort((p1,p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 		for(Produto p:list) {
