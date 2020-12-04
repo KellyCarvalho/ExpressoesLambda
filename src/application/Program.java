@@ -1,14 +1,12 @@
 package application;
 
 import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
-import java.util.function.Predicate;
+import java.util.function.Consumer;
 
 import entities.Produto;
-import util.DescontoPreco;
 
 public class Program {
 
@@ -35,7 +33,10 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		list.forEach(Produto::naostaticAtualizarPreco);//referenciando método statico
+		Consumer<Produto> cons= p->{
+			p.setPrice(p.getPrice()-p.getPrice()*0.1);
+		};
+		list.forEach(cons);//referenciando método statico
 		list.forEach(System.out::println);//referenciando método
 		
 		
