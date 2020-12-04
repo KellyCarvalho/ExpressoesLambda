@@ -35,6 +35,12 @@ public static void staticAtualizarPreco(Produto p) {
 	p.setPrice(p.getPrice()-(p.getPrice()*0.1));
 	
 }
+
+public  void naostaticAtualizarPreco() {
+	
+	price-=price*0.1;
+	
+}
 @Override
 public String toString() {
 	return "Produto [name=" + name + ", price=" + price + "]";
