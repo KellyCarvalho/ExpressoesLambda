@@ -5,6 +5,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
+import java.util.function.Predicate;
 
 import entities.Produto;
 import util.ProdutoPredicate;
@@ -31,7 +32,8 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		list.removeIf(Produto::naostaticProdutoPredicate);//referência para método
+		Predicate<Produto> pred = p->p.getPrice()<=100;
+		list.removeIf(pred);//referência para método
 		
 		list.sort((p1,p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 		for(Produto p:list) {
