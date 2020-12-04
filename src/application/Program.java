@@ -33,9 +33,9 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		Consumer<Produto> cons= p->p.setPrice(p.getPrice()-p.getPrice()*0.1);
+		double desconto=0.1;
 		
-		list.forEach(cons);//referenciando método statico
+		list.forEach(p->p.setPrice(p.getPrice()-p.getPrice()*desconto));
 		list.forEach(System.out::println);//referenciando método
 		
 		
