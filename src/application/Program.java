@@ -32,8 +32,8 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		Predicate<Produto> pred = p->p.getPrice()<=100;
-		list.removeIf(pred);//referência para método
+		
+		list.removeIf(p->p.getPrice()<=100.00);//usando a expressão direto no método
 		
 		list.sort((p1,p2) -> p1.getName().toUpperCase().compareTo(p2.getName().toUpperCase()));
 		for(Produto p:list) {
