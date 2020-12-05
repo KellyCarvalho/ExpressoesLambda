@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Produto;
@@ -35,6 +36,9 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
+		
+		Function<Produto, String> func= p->p.getName().toUpperCase();
+		
 		//map vai aplicar um função em cada elemento da stream gerando uma nova stream com a função passada
 		//após passar pela função é necessário novamente converter os nomes para list
 		List<String> nomes =list.stream().map(Produto::naostaticUpperCaseNome).collect(Collectors.toList());
