@@ -30,17 +30,14 @@ public double getPrice() {
 public void setPrice(double price) {
 	this.price = price;
 }
-public static void staticAtualizarPreco(Produto p) {
+public static String staticUpperCaseNome(Produto p) {
 	
-	p.setPrice(p.getPrice()-(p.getPrice()*0.1));
+	
+	return p.getName().toUpperCase();
 	
 }
 
-public  void naostaticAtualizarPreco() {
-	
-	price-=price*0.1;
-	
-}
+
 @Override
 public String toString() {
 	return "Produto [name=" + name + ", price=" + price + "]";
