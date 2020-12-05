@@ -1,12 +1,16 @@
 package application;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
+
 
 import entities.Produto;
 import model.services.ServiceProduto;
@@ -37,19 +41,17 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
-		ServiceProduto ps = new ServiceProduto();
-		double sum = ps.filtrarSoma(list, p ->p.getName().charAt(0)=='t');
+	
+		Stream<Double> p = list.stream().map(x->x.getPrice()*15);//gerou um stream com os resultados
+		System.out.println(Arrays.toString(p.toArray()));
 		
-		System.out.println("Soma: "+sum);
+		Stream<String> produtos = Stream.of("Notebook","Televisão","Geladeira");
+		System.out.println(Arrays.toString(produtos.toArray()));
 		
+		Stream<Integer> bonus = Stream.iterate(0, x->x+1);
+		System.out.println(Arrays.toString(bonus.limit(10).toArray()));
 		
-		//map vai aplicar um função em cada elemento da stream gerando uma nova stream com a função passada
-		//após passar pela função é necessário novamente converter os nomes para list
-		List<String> nomes =list.stream().map(p->p.getName().toUpperCase()).collect(Collectors.toList());
-		
-		
-		nomes.forEach(System.out::println);//referenciando método
-		
+		//sequencia fibonacci
 		
 		sc.close();
 
