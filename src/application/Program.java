@@ -37,11 +37,11 @@ public class Program {
 			
 		}
 		
-		Function<Produto, String> func= p->p.getName().toUpperCase();
+		
 		
 		//map vai aplicar um função em cada elemento da stream gerando uma nova stream com a função passada
 		//após passar pela função é necessário novamente converter os nomes para list
-		List<String> nomes =list.stream().map(func).collect(Collectors.toList());
+		List<String> nomes =list.stream().map(p->p.getName().toUpperCase()).collect(Collectors.toList());
 		
 		
 		nomes.forEach(System.out::println);//referenciando método
