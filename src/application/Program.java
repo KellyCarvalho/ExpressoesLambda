@@ -51,7 +51,7 @@ public class Program {
 		Stream<Integer> bonus = Stream.iterate(0, x->x+1);
 		System.out.println(Arrays.toString(bonus.limit(10).toArray()));
 		
-		//sequencia fibonacci
+		
 		
 		sc.close();
 
