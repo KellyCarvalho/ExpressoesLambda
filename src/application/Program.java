@@ -9,6 +9,7 @@ import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import entities.Produto;
+import model.services.ServiceProduto;
 import util.UpperCaseNome;
 
 public class Program {
@@ -36,7 +37,10 @@ public class Program {
 			list.add(new Produto(name,price));
 			
 		}
+		ServiceProduto ps = new ServiceProduto();
+		double sum = ps.filtrarSoma(list, p ->p.getName().charAt(0)=='t');
 		
+		System.out.println("Soma: "+sum);
 		
 		
 		//map vai aplicar um função em cada elemento da stream gerando uma nova stream com a função passada
