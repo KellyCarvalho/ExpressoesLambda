@@ -36,6 +36,12 @@ public static String staticUpperCaseNome(Produto p) {
 	return p.getName().toUpperCase();
 	
 }
+public  String naostaticUpperCaseNome() {
+	
+	
+	return name.toUpperCase();
+	
+}
 
 
 @Override
